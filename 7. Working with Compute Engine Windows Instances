@@ -1,0 +1,57 @@
+You’ve been tasked with getting a Windows web server up and running on a Compute Engine instance. To accomplish this, you’ll need to create the appropriate instance, use RDP to set up necessary software, and create a home page to test the server.
+
+You’ll need to accomplish the following steps to complete your task:
+
+Create a Compute Engine VM instance. (Use Series: N1 with the Machine type*: n1-standard-1.
+Set your Windows password.
+Access RDP.
+Install the required IIS components.
+Create an index.html page.
+View the final page in a browser.
+Learning Objectives
+0 of 5 completed
+
+
+Create a Compute Engine VM instance.
+
+From the main navigation, choose Compute Engine > VMs.
+In the VM Instances area, click Create.
+With New VM instance chosen from the options on the left, configure your instance:
+In the name field, provide a relevant name using hyphens, like la-windows-1.
+Keep the suggested Region and Zone.
+Use Series: N1 and Machine type: n1-standard-1
+In the Boot Disk section, click Change and select Windows Server 2019 Datacenter, Server with Desktop Experience from the list; click Select.
+Under Firewall, choose the Allow HTTP traffic option.
+Click Create.
+
+Set Windows password.
+
+From the RDP options, click Set Windows password.
+In the dialog, confirm your username is correct and click Set.
+Copy the supplied password and click Close.
+
+Launch RDP window.
+
+Launch the RDP window by using one of the following methods:
+If you're on a Windows system, click RDP.
+If you're on a Mac using Chrome in a standard window, first install the Chrome RDP extension, and then click RDP.
+If you're on a Mac using another browser or Incognito window, from the App Store, download and install the latest version of the Microsoft Remote Desktop app. Then, choose Download the RDP file from the RDP options and open the file.
+
+Install IIS.
+
+From the Windows Start menu, right-click on Windows Powershell and choose Run as administrator.
+
+In the PowerShell window, enter the following commands to set install IIS, starting with:
+
+import-module servermanager
+Set up the web server:
+
+add-windowsfeature web-server -includeallsubfeature
+Create the index.html page:
+
+echo '&lt;!doctype html>&lt;html>&lt;body>&lt;h1>Greetings from Linux Academy!&lt;/h1>&lt;/body>&lt;/html>' > C:\inetpub\wwwroot\index.html
+
+Test your page.
+
+From the Compute Engine VM page, click the External link for your Windows VM instance.
+Review the page in your browser.
