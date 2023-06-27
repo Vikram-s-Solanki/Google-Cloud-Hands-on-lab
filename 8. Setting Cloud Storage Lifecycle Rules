@@ -1,0 +1,23 @@
+Your entire company is looking for ways to lower expenses, and you’ve been asked to set up a series of Cloud Storage lifecycle rules for a particular bucket. These rules will move the objects within the bucket from a Standard storage class to Nearline after one month, then to Coldline after a quarter, then to Archive after a year, and finally to delete the objects after two years — with the exception of one object, which will be placed on an event-based hold. You decide to use both the console and the command line to accomplish these goals.
+
+You can find files for this lab in the cloud-storage-lifecycle-lab folder of the lab repo.
+
+
+Create and Populate the Storage Bucket
+
+In Cloud Storage, create a bucket and add several files.
+
+
+Create Lifecycle Storage Rules via the Console
+
+Using the console, create lifecycle rules.
+
+
+Update Lifecycle Rules via the CLI
+
+From the GCP CLI, update the existing lifecycle rules using a JSON file.
+
+
+Place an Item on Hold
+
+Place an event-based hold on one item in bucket.
