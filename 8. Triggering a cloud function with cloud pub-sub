@@ -12,3 +12,81 @@ Confirm Cloud Function executed via logs.
 Send message to topic from command line.
 Confirm Cloud Function executed via logs.
 Note: In addition to the lab mentioned libraries, use the API Library to find and enable the Cloud Build API. The Cloud Pub/Sub console is now found under Analytics, Pub/Sub. When creating the "acg-pubsub-function" function, make sure to expand out the "Runtime, build, connections and security settings" section, and set the "Maximum number of instances" to 1.
+
+Enable Required APIs
+
+Use the API Library to find and enable the Cloud Pub/Sub API.
+Use the API Library to find and enable the Cloud Functions API.
+Use the API Library to find and enable the Cloud Build API.
+
+Create Pub/Sub Topic
+
+From the main console navigation, go to Cloud Pub/Sub (Now found under Analytics, Pub/Sub)
+Click Create a topic.
+In the dialog, enter a name greetings for the topic.
+Click Create.
+
+Create a Cloud Function
+
+From the main console, go to Cloud Functions.
+Click Create function.
+Configure the function with the following values:
+Name: acg-pubsub-function
+Trigger: Cloud Pub/Sub
+Topic: [Topic just created]
+Click Save.
+Make sure to expand out the "Runtime, build, connections and security settings" section, and set the "Maximum number of instances" to 1.
+Click Next.
+Runtime: Python 3.9
+Source code: Inline editor
+In the main.py field, enter the following code:
+import base64
+
+def greetings_pubsub(data, context):
+
+    if 'data' in data:
+        name = base64.b64decode(data['data']).decode('utf-8')
+    else:
+        name = 'folks'
+    print('Greetings {} from Linux Academy!'.format(name))
+Set Entry Point to greetings_pubsub.
+Click Deploy.
+
+Publish Message to Topic From Console
+
+Click the newly created Cloud Function name.
+Switch to Trigger.
+Click the topic link to go to the Cloud Pub/Sub topic.
+From the Topic page, click Publish Message.
+In the Message field, enter everyone around the world.
+Click Publish.
+
+Confirm Cloud Function Execution
+
+Return to the Cloud Functions dashboard.
+Click the Cloud Function's name.
+From the Cloud Function navigation, click Logs.
+Locate the most recent log.
+Confirm function execution.
+
+Trigger Cloud Function Directly From Command Line
+
+Open the Projects dialog and copy the current project ID.
+
+Click Activate Cloud Shell from the top row of the console.
+
+In the Cloud Shell, enter the following code: gcloud config set project [PROJECT_ID]
+
+Next, enter the following code:
+
+ DATA=$(printf 'my friends' | base64)
+ gcloud functions call acg-pubsub-function --data '{"data":"'$DATA'"}'
+After a moment, refresh the logs page and confirm the Cloud Function execution.
+
+
+Publish Message to Topic From Command Line
+
+In the Cloud Shell, enter the following command:
+
+ gcloud pubsub topics publish greetings --message "y'all"
+After a moment, refresh the log page to confirm the function has executed.
