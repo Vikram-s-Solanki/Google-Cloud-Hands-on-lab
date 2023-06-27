@@ -1,0 +1,23 @@
+You’ve been asked to deploy the latest version of your company’s new app, LA Music Gallery, on Google Cloud App Engine. The app allows a user to enter details about a music album, including the name of both the artist and the album, as well as the HTML and CSS to present the app. To accomplish this, the app, written in Python, stores data in Cloud Datastore using App Engine’s standard environment.
+
+You’ll need to accomplish the following steps to complete your task:
+
+Ensure required APIs are available.
+Clone a GitHub repo to acquire the files.
+Properly configure the application by modifying a YAML file.
+Deploy the app to App Engine in the proper region.
+Test the app.
+Learning Objectives
+0 of 4 completed
+
+
+Enable APIs and clone GitHub repository.
+
+
+Configure `config.py` file.
+
+
+Deploy the app.
+
+
+Test the app.
