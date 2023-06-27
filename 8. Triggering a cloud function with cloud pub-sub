@@ -1,1 +1,14 @@
-wew
+You’ve been asked to lay the groundwork for one aspect of the new app that relies on code being executed when a message is received from any number of outlets. To do this, you’ll need to establish a Cloud Pub/Sub topic and then create an example Cloud Function that uses the topic as a trigger. Naturally, you’ll need to confirm the Cloud Function has successfully executed.
+
+You’ll need to accomplish the following steps to complete your task:
+
+Enable APIs.
+Create Pub/Sub topic.
+Create Cloud Function.
+Publish message on topic.
+Confirm Cloud Function executed via logs.
+Trigger directly via the command line.
+Confirm Cloud Function executed via logs.
+Send message to topic from command line.
+Confirm Cloud Function executed via logs.
+Note: In addition to the lab mentioned libraries, use the API Library to find and enable the Cloud Build API. The Cloud Pub/Sub console is now found under Analytics, Pub/Sub. When creating the "acg-pubsub-function" function, make sure to expand out the "Runtime, build, connections and security settings" section, and set the "Maximum number of instances" to 1.
