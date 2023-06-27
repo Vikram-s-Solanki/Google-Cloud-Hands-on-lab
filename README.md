@@ -7,4 +7,4 @@ Completed following handson before starting the End to End projects.
 5. Creating a Topic and Subscription with Pub/Sub in Google Cloud
 6. Deploying an App Engine Application
 7. Working with Compute Engine Windows Instances
-8. Triggering a Cloud Function with Cloud Pub/Sub
+
