@@ -14,5 +14,5 @@ Completed following handson before starting the End to End projects.
 12. Creating IAM rules
 13. Creating service accounts
 14. Copy data from Google cloud storage to BigQuery
-15. 
+15. Create DataProc Cluster
 
